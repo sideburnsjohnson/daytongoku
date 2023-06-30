@@ -1,0 +1,180 @@
+html {
+    font-size: 62.5%;
+}
+
+body { 
+    margin: 0;
+    font-family: 'Indie Flower';
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul { 
+    list-style-type: none;
+    display: flex;
+    gap: 6.5em;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration:none;
+    color: black;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li a.active:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid gray;
+    bottom: -6px;
+    transition: width .3s;
+}
+
+/* Hero Section */
+
+main {
+    display: flex;
+    gap: 5em;
+    margin-top: 10em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+.right-col {
+    flex-grow:1;
+}
+
+h1 {
+    font-size: 7.0rem;
+    font-family: 'Gochi Hand';
+    font-weight: normal;
+    margin: 0;
+}
+
+.subhead {
+    font-size: 2.0rem;
+} 
+
+.cta-btns {
+    display: flex;
+    gap: 5em;
+    padding: 7em 0;
+}
+
+.primary-cta, .second-cta, .third-cta{
+    background-color: #BFDCA8;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+
+/* Right column gallery*/
+
+.right-col {
+    display: grid;
+    gap: 3.0em;
+    padding: 1em 2em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-columns: auto;
+    grid-template-areas:
+        "left right"
+        "left bottom";
+}
+
+.card { 
+    background: gray;
+    background-size: 300px 100px;
+    border-radius: 1.6em;
+    width: 350px;
+    display: flex;
+    background-size:150%;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('../images/IMG_8253.jpg');
+}  
+
+.card2 {
+    grid-area: right;
+    background-image: url('../images/minionbday.jpg');
+}
+
+.card3 {
+    grid-area: bottom;
+    background-image: url('../images/tulips.jpg');
+}
+
+/*  Microinteractions*/
+
+nav ul li a:hover:before {
+   width:100%
+}
+
+.primary-cta:hover, .second-cta:hover, .third-cta:hover {
+    background: #ABD18C;
+}
+
+/*intro*/
+
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+}
+
